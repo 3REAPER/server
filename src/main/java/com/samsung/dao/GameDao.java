@@ -12,6 +12,5 @@ public interface GameDao extends JpaRepository<Game, Integer> {
     @EntityGraph(attributePaths = {"genre", "author"}) // Решение N + 1, по сути внутри join
     List<Game> findAll();
 
-    // SELECT * FROM book WHERE name = ?
     Game findByName(String name);
 }
